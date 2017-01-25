@@ -262,6 +262,9 @@ OWI.controller('MainCtrl', ["$scope", function($scope) {
           }, {
               "name": "Хандзо (Танец дракона)",
               "img": "https://overwiki.ru/images/1/1f/%D0%A5%D0%B0%D0%BD%D0%B4%D0%B7%D0%BE-%D0%A2%D0%B0%D0%BD%D0%B5%D1%86_%D0%B4%D1%80%D0%B0%D0%BA%D0%BE%D0%BD%D0%B0-%D0%93%D1%80%D0%B0%D1%84%D1%84%D0%B8%D1%82%D0%B8.png"
+          },  {
+              "name": "Хандзо (Синий дракон)",
+              "img": "https://overwiki.ru/images/0/04/%D0%A5%D0%B0%D0%BD%D0%B4%D0%B7%D0%BE-%D0%A1%D0%B8%D0%BD%D0%B8%D0%B9_%D0%B4%D1%80%D0%B0%D0%BA%D0%BE%D0%BD-%D0%93%D1%80%D0%B0%D1%84%D1%84%D0%B8%D1%82%D0%B8.png"
           }, {
               "name": "Год петуха",
               "img": "https://overwiki.ru/images/0/0c/%D0%9E%D0%B1%D1%89%D0%B8%D0%B5-%D0%93%D0%BE%D0%B4_%D0%BF%D0%B5%D1%82%D1%83%D1%85%D0%B0-%D0%93%D1%80%D0%B0%D1%84%D1%84%D0%B8%D1%82%D0%B8.png"
@@ -310,8 +313,17 @@ OWI.controller('MainCtrl', ["$scope", function($scope) {
         "name": "Дракон",
         "img": "https://hydra-media.cursecdn.com/overwatch.gamepedia.com/9/9b/PI_Dragon_Dance.png"
     }, {
+        "name": "Лев",
+        "img": "https://hydra-media.cursecdn.com/overwatch.gamepedia.com/c/c5/PI_Lion_Dance.png"
+    }, {
+        "name": "Лунамари",
+        "img": "https://hydra-media.cursecdn.com/overwatch.gamepedia.com/c/c8/PI_Lucky_Pouch.png"
+    },  {
+        "name": "Предсказания",
+        "img": "https://hydra-media.cursecdn.com/overwatch.gamepedia.com/3/33/PI_Lunamari.png"
+    },{
         "name": "Гадание",
-        "img": "https://hydra-media.cursecdn.com/overwatch.gamepedia.com/9/9b/PI_Dragon_Dance.png"
+        "img": "https://hydra-media.cursecdn.com/overwatch.gamepedia.com/0/05/PI_Fortune.png"
     }, {
         "name": "Футимари",
         "img": "https://hydra-media.cursecdn.com/overwatch.gamepedia.com/c/c8/PI_Fuchimari.png"
@@ -355,23 +367,8 @@ OWI.controller('MainCtrl', ["$scope", function($scope) {
         "name": "Мандаринки",
         "img": "https://hydra-media.cursecdn.com/overwatch.gamepedia.com/1/1e/PI_Tangerines.png"
     }, {
-        "name": "Дрейдл",
-        "img": "https://hydra-media.cursecdn.com/overwatch.gamepedia.com/5/5b/PI_Year_Of_The_Rooster_2017.png"
-    }, {
-        "name": "Празднуем!",
-        "img": "https://hydra-media.cursecdn.com/overwatch.gamepedia.com/d/d0/PI_Cheers%21.png"
-    }, {
-        "name": "Конфетная палочка",
-        "img": "https://hydra-media.cursecdn.com/overwatch.gamepedia.com/4/4d/PI_Candy_Cane.png"
-    }, {
-        "name": "Игристое",
-        "img": "https://hydra-media.cursecdn.com/overwatch.gamepedia.com/a/a4/PI_Bubbly.png"
-    }, {
-        "name": "Колокольчики",
-        "img": "https://hydra-media.cursecdn.com/overwatch.gamepedia.com/1/16/PI_Bells.png"
-    }, {
         "name": "Год петуха 2017",
-        "img": "https://hydra-media.cursecdn.com/overwatch.gamepedia.com/2/22/PI_2017.png"
+        "img": "https://hydra-media.cursecdn.com/overwatch.gamepedia.com/5/5b/PI_Year_Of_The_Rooster_2017.png"
     }]
   }
 
