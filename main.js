@@ -317,10 +317,10 @@ OWI.controller('MainCtrl', ["$scope", function($scope) {
         "img": "https://hydra-media.cursecdn.com/overwatch.gamepedia.com/c/c5/PI_Lion_Dance.png"
     }, {
         "name": "Лунамари",
-        "img": "https://hydra-media.cursecdn.com/overwatch.gamepedia.com/c/c8/PI_Lucky_Pouch.png"
+        "img": "https://hydra-media.cursecdn.com/overwatch.gamepedia.com/3/33/PI_Lunamari.png"
     },  {
         "name": "Предсказания",
-        "img": "https://hydra-media.cursecdn.com/overwatch.gamepedia.com/3/33/PI_Lunamari.png"
+        "img": "https://hydra-media.cursecdn.com/overwatch.gamepedia.com/c/c8/PI_Lucky_Pouch.png"
     },{
         "name": "Гадание",
         "img": "https://hydra-media.cursecdn.com/overwatch.gamepedia.com/0/05/PI_Fortune.png"
