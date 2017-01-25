@@ -1,0 +1,282 @@
+<html ng-app="OWI">
+<head>
+    <title>
+        Overwatch Winter Wonderland Items Tracker
+    </title>
+    <link href="./css/reset.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
+    <script src="./angular.min.js">
+    </script>
+    </link>
+    </link>
+</head>
+</html>
+<body ng-controller="MainCtrl as $ctrl">
+<div id="header">
+    <div class="left">
+        <img src="https://overwatch-a.akamaihd.net/img/nav-logo-wide-b9edec2f5848ebdda9e3781362d7a03c8ded63a3019a12014bba79ae0cc99bd06c88603b7b7e246716526f6c31f0a608c6ff33cf8ec61701c762fe1c7cb4b9df.png">
+        <h1>
+            Год петуха
+        </h1>
+        <span style="margin-left:25px;">Создано: <a style="color:white" href="https://vk.com/overfire" target="_blank">OverFire</a>
+</span>
+    </div>
+    <div class="right">
+        <div class="reset">
+            <div class="x" ng-click="$ctrl.reset()" ng-mouseleave="reset = false" ng-mouseover="reset = true">
+                +
+            </div>
+            <div class="tooltip" ng-class="{show : reset}">
+                Сбросить
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div id="items row">
+        <div class="col-md-6">
+            <div class="section" id="legendary-skins">
+                <div id="image-preview" ng-class="{ show: $ctrl.preview }" ng-show="$ctrl.preview.img">
+                    <h2>
+                        Предпросмотр
+                    </h2>
+                        <span>
+                            {{$ctrl.preview.name}}
+                        </span>
+                    <img src="{{$ctrl.preview.img}}"/>
+                </div>
+                <div id="image-preview" ng-class="{ show: $ctrl.preview }" ng-if="$ctrl.preview.video">
+                    <h2>
+                        Предпросмотр
+                    </h2>
+                        <span>
+                            {{$ctrl.preview.name}}
+                        </span>
+                    <video autoplay="true" autostart="true" loop="true" src="{{$ctrl.preview.video}}">
+                    </video>
+                </div>
+                <div class="inner" ng-class="{ hide: $ctrl.preview }">
+                    <h2>
+                        Легендарные
+                    </h2>
+                        <span>
+                            (21000 кредитов)
+                        </span>
+                    <div class="images">
+                        <div class="item" ng-repeat="skin in $ctrl.items.skins.legendary track by $index"
+                             style="background-image:url({{skin.img}});">
+                            <div class="thing">
+                                <input id="{{'legendary' + $index}}" ng-change="$ctrl.onSelect()"
+                                       ng-model="$ctrl.checked.legendary[skin.name]" type="checkbox">
+                                <label for="{{'legendary' + $index}}">
+                                    <h3 class="name">
+                                        {{skin.name}}
+                                    </h3>
+                                </label>
+                                </input>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row skins-potg-emotions">
+                <div class="col-md-6">
+                    <div class="header">
+                        <h2>
+                            Эпические облики
+                        </h2>
+                        <br/>
+                        <span>
+                            (4500 кредитов)
+                        </span>
+                    </div>
+                    <div class="content">
+                        <div class="item" ng-mouseleave="$ctrl.hidePreview()" ng-mouseover="$ctrl.showPreview(skin)"
+                             ng-repeat="skin in $ctrl.items.skins.epic track by $index">
+                            <input id="{{'epic' + $index}}" ng-change="$ctrl.onSelect()"
+                                   ng-model="$ctrl.checked.epic[skin.name]" type="checkbox">
+                            <label for="{{'epic' + $index}}">
+                                <h3>
+                                    {{skin.name}}
+                                </h3>
+                            </label>
+                            </input>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="header">
+                        <h2>
+                            Лучшие моменты матча
+                        </h2>
+                        <br/>
+                        <span>
+                            (2250 кредитов)
+                        </span>
+                    </div>
+                    <div class="content">
+                        <div class="item" ng-mouseleave="$ctrl.hidePreview()" ng-mouseover="$ctrl.showPreview(intro)"
+                             ng-repeat="intro in $ctrl.items.intros track by $index">
+                            <input id="{{'intro' + $index}}" ng-change="$ctrl.onSelect()"
+                                   ng-model="$ctrl.checked.intros[intro.name]" type="checkbox">
+                            <label for="{{'intro' + $index}}">
+                                <h3>
+                                    {{intro.name}}
+                                </h3>
+                            </label>
+                            </input>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h2>
+                            Эмоции
+                        </h2>
+                        <span>
+                            (2250 Кредитов)
+                        </span>
+                    </div>
+                    <div class="content">
+                        <div class="item" ng-repeat="emote in $ctrl.items.emotes track by $index">
+                            <input id="{{'emote' + $index}}" ng-change="$ctrl.onSelect()"
+                                   ng-model="$ctrl.checked.emotes[emote]" type="checkbox">
+                            <label for="{{'emote' + $index}}">
+                                <h3>
+                                    {{emote}}
+                                </h3>
+                            </label>
+                            </input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="row skins-potg-emotions voice">
+                <div class="col-md-12">
+                <div class="header">
+                    <h2>
+                        Реплики
+                    </h2>
+                        <span>
+                            (1725 Кредитов)
+                        </span>
+                    </div>
+                <div class="content">
+                    <div class="items">
+                        <div class="item" ng-repeat="voice in $ctrl.items.voicelines track by $index">
+                            <input id="{{'voice' + $index}}" ng-change="$ctrl.onSelect()"
+                                   ng-model="$ctrl.checked.voicelines[voice]" type="checkbox">
+                            <label for="{{'voice' + $index}}">
+                                <h3>
+                                    {{voice}}
+                                </h3>
+                            </label>
+                            </input>
+                        </div>
+                    </div>
+           </div>
+                    </div>
+
+            </div>
+            <div class="row skins-potg-emotions">
+                <div class="col-md-12">
+                    <div class="header">
+
+                        <h2>
+                            Победные позы
+                        </h2>
+                        <span>
+                            (1575 Кредитов)
+                        </span>
+                    </div>
+                    <div class="content">
+                        <div class="items">
+                            <div class="item" ng-mouseleave="$ctrl.hidePreview()" ng-mouseover="$ctrl.showPreview(pose)"
+                                 ng-repeat="pose in $ctrl.items.victoryposes track by $index">
+                                <input id="{{'pose' + $index}}" ng-change="$ctrl.onSelect()"
+                                       ng-model="$ctrl.checked.victoryposes[pose.name]" type="checkbox">
+                                <label for="{{'pose' + $index}}">
+                                    <h3>
+                                        {{pose.name}}
+                                    </h3>
+                                </label>
+                                </input>
+                            </div>
+                        </div>
+                    </div>
+
+</div>
+            </div>
+
+</div>
+            <div class="col-md-2">
+                <div class="row skins-potg-emotions voice">
+                    <div class="header">
+                    <h2>
+                        Граффити
+                    </h2>
+                        <span>
+                            (3750 Кредитов)
+                        </span>
+                        </div>
+                    <div class="items">
+                        <div class="item" ng-mouseleave="$ctrl.hidePreview()" ng-mouseover="$ctrl.showPreview(spray)"
+                             ng-repeat="spray in $ctrl.items.sprays track by $index">
+                            <input id="{{'spray' + $index}}" ng-change="$ctrl.onSelect()"
+                                   ng-model="$ctrl.checked.sprays[spray.name]" type="checkbox">
+                            <label for="{{'spray' + $index}}">
+                                <h3>
+                                    {{spray.name}}
+                                </h3>
+                            </label>
+                            </input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="row skins-potg-emotions">
+                <div class="col-md-12">
+                <div class="header">
+                <h2>
+                    Значки
+                </h2>
+                    <span>
+                            (Выпадают из сундуков)
+                        </span>
+                    </div>
+                <div class="content">
+                <div class="items">
+                    <div class="item" ng-mouseleave="$ctrl.hidePreview()" ng-mouseover="$ctrl.showPreview(icon)"
+                         ng-repeat="icon in $ctrl.items.icons track by $index">
+                        <input id="{{'icon' + $index}}" ng-change="$ctrl.onSelect()"
+                               ng-model="$ctrl.checked.icons[icon.name]" type="checkbox">
+                        <label for="{{'icon' + $index}}">
+                            <h3>
+                                {{icon.name}}
+                            </h3>
+                        </label>
+                        </input>
+                    </div>
+                </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+</div>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-88969684-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+<script src="./main.js">
+</script>
+</body>
