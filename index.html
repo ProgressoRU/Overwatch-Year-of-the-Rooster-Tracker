@@ -34,13 +34,13 @@
 </div>
 <div class="container-fluid">
     <div id="items row">
-        <div class="col-md-6">
+        <div class="col-md-5">
             <div class="section" id="legendary-skins">
                 <div id="image-preview" ng-class="{ show: $ctrl.preview }" ng-show="$ctrl.preview.img">
                     <h2>
                         Предпросмотр
                     </h2>
-                        <span>
+                    <span>
                             {{$ctrl.preview.name}}
                         </span>
                     <img src="{{$ctrl.preview.img}}"/>
@@ -49,7 +49,7 @@
                     <h2>
                         Предпросмотр
                     </h2>
-                        <span>
+                    <span>
                             {{$ctrl.preview.name}}
                         </span>
                     <video autoplay="true" autostart="true" loop="true" src="{{$ctrl.preview.video}}">
@@ -59,21 +59,21 @@
                     <h2>
                         Легендарные
                     </h2>
-                        <span>
+                    <span>
                             (21000 кредитов)
                         </span>
                     <div class="images">
                         <div class="item" ng-repeat="skin in $ctrl.items.skins.legendary track by $index"
                              style="background-image:url({{skin.img}});">
                             <div class="thing">
-                                <input id="{{'legendary' + $index}}" ng-change="$ctrl.onSelect()"
-                                       ng-model="$ctrl.checked.legendary[skin.name]" type="checkbox">
-                                <label for="{{'legendary' + $index}}">
-                                    <h3 class="name">
+                                <label for="{{'legendary' + $index}}" class="custom-control custom-checkbox">
+                                    <input id="{{'legendary' + $index}}" ng-change="$ctrl.onSelect()"
+                                           ng-model="$ctrl.checked.legendary[skin.name]" type="checkbox" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="name custom-control-description">
                                         {{skin.name}}
-                                    </h3>
+                                    </span>
                                 </label>
-                                </input>
                             </div>
                         </div>
                     </div>
@@ -93,14 +93,14 @@
                     <div class="content">
                         <div class="item" ng-mouseleave="$ctrl.hidePreview()" ng-mouseover="$ctrl.showPreview(skin)"
                              ng-repeat="skin in $ctrl.items.skins.epic track by $index">
-                            <input id="{{'epic' + $index}}" ng-change="$ctrl.onSelect()"
-                                   ng-model="$ctrl.checked.epic[skin.name]" type="checkbox">
-                            <label for="{{'epic' + $index}}">
-                                <h3>
+                            <label for="{{'epic' + $index}}" class="custom-control custom-checkbox">
+                                <input id="{{'epic' + $index}}" ng-change="$ctrl.onSelect()"
+                                       ng-model="$ctrl.checked.epic[skin.name]" type="checkbox" class="custom-control-input">
+                                <span class="custom-control-indicator"></span>
+                                <span class="custom-control-description">
                                     {{skin.name}}
-                                </h3>
+                                </span>
                             </label>
-                            </input>
                         </div>
                     </div>
                 </div>
@@ -117,14 +117,14 @@
                     <div class="content">
                         <div class="item" ng-mouseleave="$ctrl.hidePreview()" ng-mouseover="$ctrl.showPreview(intro)"
                              ng-repeat="intro in $ctrl.items.intros track by $index">
-                            <input id="{{'intro' + $index}}" ng-change="$ctrl.onSelect()"
-                                   ng-model="$ctrl.checked.intros[intro.name]" type="checkbox">
-                            <label for="{{'intro' + $index}}">
-                                <h3>
+                            <label for="{{'intro' + $index}}" class="custom-control custom-checkbox">
+                                <input id="{{'intro' + $index}}" ng-change="$ctrl.onSelect()"
+                                       ng-model="$ctrl.checked.intros[intro.name]" type="checkbox" class="custom-control-input">
+                                <span class="custom-control-indicator"></span>
+                                <span class="custom-control-description">
                                     {{intro.name}}
-                                </h3>
+                                </span>
                             </label>
-                            </input>
                         </div>
                     </div>
                     <div class="header">
@@ -137,14 +137,14 @@
                     </div>
                     <div class="content">
                         <div class="item" ng-repeat="emote in $ctrl.items.emotes track by $index">
-                            <input id="{{'emote' + $index}}" ng-change="$ctrl.onSelect()"
-                                   ng-model="$ctrl.checked.emotes[emote]" type="checkbox">
-                            <label for="{{'emote' + $index}}">
-                                <h3>
+                            <label for="{{'emote' + $index}}" class="custom-control custom-checkbox">
+                                <input id="{{'emote' + $index}}" ng-change="$ctrl.onSelect()"
+                                       ng-model="$ctrl.checked.emotes[emote]" type="checkbox" class="custom-control-input">
+                                <span class="custom-control-indicator"></span>
+                                <span class="custom-control-description">
                                     {{emote}}
-                                </h3>
+                                </span>
                             </label>
-                            </input>
                         </div>
                     </div>
                 </div>
@@ -154,35 +154,34 @@
         <div class="col-md-2">
             <div class="row skins-potg-emotions voice">
                 <div class="col-md-12">
-                <div class="header">
-                    <h2>
-                        Реплики
-                    </h2>
+                    <div class="header">
+                        <h2>
+                            Реплики
+                        </h2>
                         <span>
                             (1725 Кредитов)
                         </span>
                     </div>
-                <div class="content">
-                    <div class="items">
-                        <div class="item" ng-repeat="voice in $ctrl.items.voicelines track by $index">
-                            <input id="{{'voice' + $index}}" ng-change="$ctrl.onSelect()"
-                                   ng-model="$ctrl.checked.voicelines[voice]" type="checkbox">
-                            <label for="{{'voice' + $index}}">
-                                <h3>
-                                    {{voice}}
-                                </h3>
-                            </label>
-                            </input>
+                    <div class="content col-md-12">
+                        <div class="items row">
+                            <div class="item col-md-6" ng-repeat="voice in $ctrl.items.voicelines track by $index">
+                                <label for="{{'voice' + $index}}" class="custom-control custom-checkbox">
+                                    <input id="{{'voice' + $index}}" ng-change="$ctrl.onSelect()"
+                                           ng-model="$ctrl.checked.voicelines[voice]" type="checkbox" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">
+                                        {{voice}}
+                                    </span>
+                                </label>
+                            </div>
                         </div>
                     </div>
-           </div>
-                    </div>
+                </div>
 
             </div>
             <div class="row skins-potg-emotions">
                 <div class="col-md-12">
                     <div class="header">
-
                         <h2>
                             Победные позы
                         </h2>
@@ -194,84 +193,93 @@
                         <div class="items">
                             <div class="item" ng-mouseleave="$ctrl.hidePreview()" ng-mouseover="$ctrl.showPreview(pose)"
                                  ng-repeat="pose in $ctrl.items.victoryposes track by $index">
-                                <input id="{{'pose' + $index}}" ng-change="$ctrl.onSelect()"
-                                       ng-model="$ctrl.checked.victoryposes[pose.name]" type="checkbox">
-                                <label for="{{'pose' + $index}}">
-                                    <h3>
+                                <label for="{{'pose' + $index}}" class="custom-control custom-checkbox">
+                                    <input id="{{'pose' + $index}}" ng-change="$ctrl.onSelect()" class="custom-control-input"
+                                           ng-model="$ctrl.checked.victoryposes[pose.name]" type="checkbox">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">
                                         {{pose.name}}
-                                    </h3>
+                                    </span>
                                 </label>
-                                </input>
                             </div>
                         </div>
                     </div>
-
-</div>
+                </div>
             </div>
+        </div>
 
-</div>
-            <div class="col-md-2">
-                <div class="row skins-potg-emotions voice">
+        <div class="col-md-3">
+            <div class="row skins-potg-emotions voice">
+                <div class="col-md-12">
                     <div class="header">
-                    <h2>
-                        Граффити
-                    </h2>
+                        <h2>
+                            Граффити
+                        </h2>
                         <span>
                             (3750 Кредитов)
-                        </span>
-                        </div>
-                    <div class="items">
-                        <div class="item" ng-mouseleave="$ctrl.hidePreview()" ng-mouseover="$ctrl.showPreview(spray)"
-                             ng-repeat="spray in $ctrl.items.sprays track by $index">
-                            <input id="{{'spray' + $index}}" ng-change="$ctrl.onSelect()"
-                                   ng-model="$ctrl.checked.sprays[spray.name]" type="checkbox">
-                            <label for="{{'spray' + $index}}">
-                                <h3>
+                    </span>
+                    </div>
+                    <div class="content col-md-12">
+                        <div class="items row">
+                            <div class="item col-md-6" ng-mouseleave="$ctrl.hidePreview()" ng-mouseover="$ctrl.showPreview(spray)"
+                                 ng-repeat="spray in $ctrl.items.sprays track by $index">
+                                <label for="{{'spray' + $index}}" class="custom-control custom-checkbox">
+                                    <input id="{{'spray' + $index}}" ng-change="$ctrl.onSelect()" class="custom-control-input"
+                                           ng-model="$ctrl.checked.sprays[spray.name]" type="checkbox">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">
                                     {{spray.name}}
-                                </h3>
-                            </label>
-                            </input>
+                                </span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="col-md-2">
-            <div class="row skins-potg-emotions">
-                <div class="col-md-12">
+    <div class="col-md-2">
+        <div class="row skins-potg-emotions">
+            <div class="col-md-12">
                 <div class="header">
-                <h2>
-                    Значки
-                </h2>
+                    <h2>
+                        Значки
+                    </h2>
                     <span>
                             (Выпадают из сундуков)
                         </span>
-                    </div>
+                </div>
                 <div class="content">
-                <div class="items">
-                    <div class="item" ng-mouseleave="$ctrl.hidePreview()" ng-mouseover="$ctrl.showPreview(icon)"
-                         ng-repeat="icon in $ctrl.items.icons track by $index">
-                        <input id="{{'icon' + $index}}" ng-change="$ctrl.onSelect()"
-                               ng-model="$ctrl.checked.icons[icon.name]" type="checkbox">
-                        <label for="{{'icon' + $index}}">
-                            <h3>
-                                {{icon.name}}
-                            </h3>
-                        </label>
-                        </input>
+                    <div class="items">
+                        <div class="item" ng-mouseleave="$ctrl.hidePreview()" ng-mouseover="$ctrl.showPreview(icon)"
+                             ng-repeat="icon in $ctrl.items.icons track by $index">
+                            <label for="{{'icon' + $index}}" class="custom-control custom-checkbox">
+                                <input id="{{'icon' + $index}}" ng-change="$ctrl.onSelect()"
+                                       ng-model="$ctrl.checked.icons[icon.name]" type="checkbox" class="custom-control-input">
+                                <span class="custom-control-indicator"></span>
+                                <span class="custom-control-description">
+                                    {{icon.name}}
+                                </span>
+                            </label>
+                        </div>
                     </div>
                 </div>
-                    </div>
-                    </div>
             </div>
         </div>
+    </div>
 </div>
 <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-90867752-1', 'auto');
     ga('send', 'pageview');
